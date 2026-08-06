@@ -1,0 +1,71 @@
+{
+  "month": "2026-08",
+  "today": "2026-08-06",
+  "events": [
+    {
+      "date": "2026-08-04",
+      "status": "done",
+      "label": "발표 완료",
+      "items": [
+        {
+          "ticker": "AMD",
+          "href": "reports/AMD_20260804.html"
+        },
+        {
+          "ticker": "ANET",
+          "href": "reports/ANET_20260804.html"
+        },
+        {
+          "ticker": "ALAB",
+          "href": "reports/ALAB_20260804.html"
+        },
+        {
+          "ticker": "SPCX",
+          "href": "reports/SPCX_20260804.html"
+        },
+        {
+          "ticker": "TSEM",
+          "href": "reports/TSEM_20260804.html"
+        },
+        {
+          "ticker": "4062",
+          "href": "reports/4062_20260804.html"
+        },
+        {
+          "ticker": "7011",
+          "href": "reports/7011_20260804.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "status": "next",
+      "label": "약 19:30–21:30 KST",
+      "items": [
+        {
+          "ticker": "LLY",
+          "href": "#up-LLY"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "status": "next",
+      "label": "약 05:00–06:30 KST",
+      "items": [
+        {
+          "ticker": "SNDK",
+          "href": "#up-SNDK"
+        },
+        {
+          "ticker": "WDC",
+          "href": "#up-WDC"
+        },
+        {
+          "ticker": "TTMI",
+          "href": "#up-TTMI"
+        }
+      ]
+    }
+  ]
+}

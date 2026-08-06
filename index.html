@@ -1,0 +1,163 @@
+<!doctype html><!-- build:20260806-r6 --><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>실적발표 통합 대시보드 — 2026-08-06</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f7fb;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-text-size-adjust:100%}header{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;padding:17px 15px}h1{font-size:21px;margin:0 0 4px}.wrap{max-width:980px;margin:auto;padding:12px}.nav{position:sticky;top:75px;z-index:40;background:#f6f7fb;display:flex;gap:8px;overflow-x:auto;padding:9px 0;border-bottom:1px solid #e2e8f0}.nav a,.rhead a,.top{flex:0 0 auto;background:#1d4ed8;color:#fff;text-decoration:none;border-radius:999px;padding:10px 13px;font-weight:900}.hint,section,.card,.setup{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:0 1px 2px #0001}.hint{background:#eff6ff;color:#1e3a8a}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.day{min-height:66px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:7px}.wide{grid-column:span 3}.event{display:inline-block;text-decoration:none;border-radius:999px;padding:8px 9px;margin:3px 2px 0 0;font-size:12px;font-weight:900}.done{background:#dcfce7;color:#166534}.next{background:#fef3c7;color:#92400e}.cards{display:grid;grid-template-columns:1fr;gap:10px}.card{text-decoration:none;color:#0f172a;display:block}.card h3{font-size:22px;margin:0}.card p{margin:2px 0;color:#64748b}.card b{display:inline-block;background:#1d4ed8;color:white;border-radius:10px;padding:8px 10px}.report{scroll-margin-top:128px;margin-top:22px;border-top:5px solid #1d4ed8;padding-top:7px}.rhead{position:sticky;top:75px;background:rgba(246,247,251,.97);z-index:30;padding:9px 0}.rhead h2{font-size:20px;margin:8px 0 2px}.rhead p{margin:0;color:#64748b}.grid{display:grid;grid-template-columns:1fr;gap:10px}.kpi{border-radius:14px;border:1px solid #e2e8f0;padding:12px}.kpi span{display:block;color:#475569}.kpi b{display:block;font-size:23px}.kpi small{display:block;color:#475569}.beat{background:#dcfce7!important;color:#166534!important;border-color:#86efac!important}.miss{background:#fee2e2!important;color:#991b1b!important;border-color:#fca5a5!important}.warn{background:#fef3c7!important;color:#92400e!important;border-color:#fde68a!important}.inline{background:#f1f5f9!important}.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;min-width:580px;width:100%;font-size:12px}th,td{border:1px solid #e2e8f0;padding:8px;text-align:left;vertical-align:top}th{background:#eef2ff}.chart{width:100%;height:auto;min-height:210px}.chart line,.chart text{stroke:#94a3b8;fill:#64748b;font-size:12px}.chart polyline{fill:none;stroke:#2563eb;stroke-width:4}.chart circle{fill:#2563eb;stroke:white;stroke-width:1.5}.src{font-size:12px;color:#64748b}.top{position:fixed;right:10px;bottom:14px;z-index:60;background:#0f172a}@media(min-width:760px){.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.nav,.rhead{top:86px}}
+.amdOriginal header{position:static;border-radius:14px;margin-bottom:12px}.amdOriginal main{padding:0!important}.amdOriginal .grid{display:grid!important;grid-template-columns:1fr!important;gap:10px}.amdOriginal svg{max-width:100%!important;height:auto!important}.amdOriginal table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.amdOriginal tbody{display:table;min-width:620px;width:100%}.amdOriginal .card,.amdOriginal section,.amdOriginal .chart{max-width:100%}@media(min-width:760px){.amdOriginal .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style>
+<style>
+:root{--ink:#0e1b2c;--sub:#5b6b80;--line:#e3e8f0;--paper:#f2f4f8;--card:#fff;
+--brand:#1d4ed8;--navy1:#0b1526;--navy2:#13294f;
+--ok-bg:#dcfce7;--ok:#166534;--up-bg:#fef3c7;--up:#92400e;--dn-bg:#fee2e2;--dn:#991b1b}
+body{background:var(--paper)}
+.hub-header{background:linear-gradient(120deg,var(--navy1),var(--navy2));color:#fff;padding:14px 16px;border-bottom:1px solid #ffffff22}
+.hub-header .hh-in{max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+.hub-eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;color:#9db4e6;text-transform:uppercase}
+.hub-title{font-size:20px;font-weight:800;letter-spacing:-.01em;margin:0}
+.hub-meta{font-size:12px;color:#b9c6dd;font-variant-numeric:tabular-nums}
+.hub-tabs{position:sticky;top:0;z-index:55;background:var(--paper);border-bottom:1px solid var(--line)}
+.hub-tabs .ht-in{max-width:1180px;margin:auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;-webkit-overflow-scrolling:touch}
+.hub-tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.hub-tabs a.hot{background:var(--brand);border-color:var(--brand);color:#fff}
+.hub-wrap{max-width:1180px;margin:auto;padding:18px 16px 8px}
+.hub-sec{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px;scroll-margin-top:64px}
+.rhead{top:46px!important}
+.report{scroll-margin-top:104px!important}
+.scard{scroll-margin-top:64px!important}
+.hub-sec>h2{font-size:17px;margin:0 0 2px;letter-spacing:-.01em}
+.hub-sub{font-size:12.5px;color:var(--sub);margin:0 0 14px}
+.hub-badge{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:3px 9px;margin-left:6px;vertical-align:2px;font-variant-numeric:tabular-nums}
+.b-ok{background:var(--ok-bg);color:var(--ok)} .b-up{background:var(--up-bg);color:var(--up)}
+/* ── 캘린더 ── */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-dow{font-size:11px;font-weight:800;color:var(--sub);text-align:center;padding:4px 0;letter-spacing:.06em}
+.cal-dow.sun{color:#c2410c}
+.cal-d{min-height:74px;background:#fbfcfe;border:1px solid var(--line);border-radius:12px;padding:6px 7px;position:relative}
+.cal-d.blank{background:transparent;border-color:transparent}
+.cal-d .n{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--sub);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.cal-d.ev{background:#fff;border-color:#c9d6f2;box-shadow:0 1px 3px #1d4ed81a}
+.cal-d.today{outline:2px solid var(--brand);outline-offset:-1px}
+.cal-d.today .n::after{content:"오늘";font-size:9px;font-weight:800;color:#fff;background:var(--brand);border-radius:6px;padding:1px 5px;letter-spacing:.02em}
+.cal-cnt{margin-left:auto;font-size:10px;font-weight:800;color:var(--brand);background:#e8eefc;border-radius:999px;padding:1px 6px;font-variant-numeric:tabular-nums}
+.chip{display:inline-block;text-decoration:none;font-size:10.5px;font-weight:800;border-radius:7px;padding:3px 6px;margin:3px 3px 0 0;line-height:1.2}
+.chip.done{background:var(--ok-bg);color:var(--ok)} .chip.next{background:var(--up-bg);color:var(--up)}
+/* 아젠다 (모바일 판독용) */
+.agenda{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+.agenda-row{display:grid;grid-template-columns:118px 1fr;gap:10px;padding:9px 2px;border-bottom:1px solid var(--line);align-items:start}
+.agenda-row:last-child{border-bottom:0}
+.agenda-when{font-size:12.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.agenda-when small{display:block;font-weight:600;color:var(--sub);font-size:11px}
+/* ── 발표완료 카드 ── */
+.hub-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.tcard{display:block;color:var(--ink);background:#fbfcfe;border:1px solid var(--line);border-radius:14px;padding:14px;transition:border-color .12s}
+.tcard:hover{border-color:var(--brand)}
+.tcard .tk{font-size:18px;font-weight:800;letter-spacing:-.01em}
+.tcard .co{font-size:12px;color:var(--sub);margin-left:6px}
+.tcard p{font-size:12.5px;color:#33455e;margin:7px 0 0;line-height:1.55}
+.tcard .acts{display:flex;gap:14px;margin-top:9px;align-items:center}
+.tcard .go{font-size:12px;font-weight:800;color:var(--brand);text-decoration:none}
+.tcard .dl{font-size:12px;font-weight:800;color:var(--sub);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:3px 9px;background:#fff}
+.tcard .dl:hover{color:var(--brand);border-color:var(--brand)}
+.st{display:inline-block;font-size:10px;font-weight:800;border-radius:999px;padding:2px 8px;margin-left:7px;vertical-align:2px}
+.st-final{background:#dcfce7;color:#166534}.st-draft{background:#fee2e2;color:#991b1b}
+/* ── 예정 setup ── */
+.setup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.scard{background:#fffdf5;border:1px solid #f1e3b8;border-radius:14px;padding:14px;scroll-margin-top:130px}
+.scard .tk{font-size:17px;font-weight:800}
+.scard dl{margin:8px 0 0;font-size:12.5px}
+.scard dt{font-weight:800;color:var(--up);margin-top:7px;font-size:11px;letter-spacing:.04em}
+.scard dd{margin:2px 0 0;color:#4a4030;font-variant-numeric:tabular-nums}
+/* ── 서프라이즈 보드 ── */
+.sb table{min-width:820px;font-variant-numeric:tabular-nums}
+.sb .v{font-weight:800}
+.sb .ok{color:var(--ok)} .sb .dn{color:var(--dn)} .sb .up{color:var(--up)}
+.judge{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:3px 9px}
+.j-ok{background:var(--ok-bg);color:var(--ok)} .j-mx{background:var(--up-bg);color:var(--up)}
+.hub-note{font-size:11.5px;color:var(--sub);margin-top:10px}
+@media(max-width:760px){
+ .hub-header{padding:12px 13px}.hub-title{font-size:17px}.hub-meta{display:none}
+ .hub-tabs .ht-in{padding:8px 13px}
+ .hub-wrap{padding:13px 10px 4px}.hub-sec{padding:13px;border-radius:14px}
+ .cal{gap:4px}.cal-d{min-height:56px;padding:4px 5px;border-radius:9px}
+ .chip{font-size:9.5px;padding:2px 4px;border-radius:5px}
+ .cal-cnt{display:none}.cal-d.today .n::after{display:none}
+ .agenda-row{grid-template-columns:96px 1fr}
+}
+</style>
+</head><body><a id="top"></a>
+<div class="hub-header"><div class="hh-in">
+<span class="hub-eyebrow">Earnings Console · KST</span>
+<h1 class="hub-title">실적발표 통합 대시보드</h1>
+<span class="hub-meta">2026-08-06 스냅샷 · 허브(캘린더·보드) · 리포트는 종목별 페이지 · JS 없음</span>
+</div></div>
+<div class="hub-tabs"><div class="ht-in">
+<a class="hot" href="#calendar">캘린더</a>
+<a href="#done">발표 완료 <b>7</b></a>
+<a href="#upcoming">예정 Setup <b>4</b></a>
+<a href="#surprise">Surprise Board</a>
+</div></div>
+<div class="hub-wrap">
+
+<section class="hub-sec" id="calendar">
+<h2>8월 실적 캘린더</h2>
+<p class="hub-sub">티커를 누르면 해당 리포트 페이지 또는 아래 예정 setup으로 이동합니다. 초록=발표 완료(리포트 보유), 노랑=예정.</p>
+<!-- CAL:BEGIN --><div class="cal"><div class="cal-dow sun">일</div><div class="cal-dow">월</div><div class="cal-dow">화</div><div class="cal-dow">수</div><div class="cal-dow">목</div><div class="cal-dow">금</div><div class="cal-dow">토</div><div class="cal-d blank"></div><div class="cal-d blank"></div><div class="cal-d blank"></div><div class="cal-d blank"></div><div class="cal-d blank"></div><div class="cal-d blank"></div><div class="cal-d"><span class="n">1</span></div><div class="cal-d"><span class="n">2</span></div><div class="cal-d"><span class="n">3</span></div><div class="cal-d ev"><span class="n">4<em class="cal-cnt">7</em></span><a class="chip done" href="reports/AMD_20260804.html">AMD</a><a class="chip done" href="reports/ANET_20260804.html">ANET</a><a class="chip done" href="reports/ALAB_20260804.html">ALAB</a><a class="chip done" href="reports/SPCX_20260804.html">SPCX</a><a class="chip done" href="reports/TSEM_20260804.html">TSEM</a><a class="chip done" href="reports/4062_20260804.html">4062</a><a class="chip done" href="reports/7011_20260804.html">7011</a></div><div class="cal-d ev"><span class="n">5<em class="cal-cnt">1</em></span><a class="chip next" href="#up-LLY">LLY</a></div><div class="cal-d ev today"><span class="n">6<em class="cal-cnt">3</em></span><a class="chip next" href="#up-SNDK">SNDK</a><a class="chip next" href="#up-WDC">WDC</a><a class="chip next" href="#up-TTMI">TTMI</a></div><div class="cal-d"><span class="n">7</span></div><div class="cal-d"><span class="n">8</span></div><div class="cal-d"><span class="n">9</span></div><div class="cal-d"><span class="n">10</span></div><div class="cal-d"><span class="n">11</span></div><div class="cal-d"><span class="n">12</span></div><div class="cal-d"><span class="n">13</span></div><div class="cal-d"><span class="n">14</span></div><div class="cal-d"><span class="n">15</span></div><div class="cal-d"><span class="n">16</span></div><div class="cal-d"><span class="n">17</span></div><div class="cal-d"><span class="n">18</span></div><div class="cal-d"><span class="n">19</span></div><div class="cal-d"><span class="n">20</span></div><div class="cal-d"><span class="n">21</span></div><div class="cal-d"><span class="n">22</span></div><div class="cal-d"><span class="n">23</span></div><div class="cal-d"><span class="n">24</span></div><div class="cal-d"><span class="n">25</span></div><div class="cal-d"><span class="n">26</span></div><div class="cal-d"><span class="n">27</span></div><div class="cal-d"><span class="n">28</span></div><div class="cal-d"><span class="n">29</span></div><div class="cal-d"><span class="n">30</span></div><div class="cal-d"><span class="n">31</span></div></div><div class="agenda"><div class="agenda-row"><div class="agenda-when">8/4 (화)<small>발표 완료</small></div><div><a class="chip done" href="reports/AMD_20260804.html">AMD</a><a class="chip done" href="reports/ANET_20260804.html">ANET</a><a class="chip done" href="reports/ALAB_20260804.html">ALAB</a><a class="chip done" href="reports/SPCX_20260804.html">SPCX</a><a class="chip done" href="reports/TSEM_20260804.html">TSEM</a><a class="chip done" href="reports/4062_20260804.html">4062</a><a class="chip done" href="reports/7011_20260804.html">7011</a></div></div><div class="agenda-row"><div class="agenda-when">8/5 (수)<small>약 19:30–21:30 KST</small></div><div><a class="chip next" href="#up-LLY">LLY</a></div></div><div class="agenda-row"><div class="agenda-when">8/6 (목)<small>약 05:00–06:30 KST</small></div><div><a class="chip next" href="#up-SNDK">SNDK</a><a class="chip next" href="#up-WDC">WDC</a><a class="chip next" href="#up-TTMI">TTMI</a></div></div></div><!-- CAL:END -->
+<p class="hub-note">SNDK·WDC·TTMI는 미국 8/5 오후 발표 = KST 8/6 새벽에 해당하여 6일로 표기했습니다(기존 버전은 5일에 합산돼 있었음).</p>
+</section>
+
+<!-- SEC:DONE -->
+<section class="hub-sec" id="done">
+<h2>발표 완료 상세 리포트<span class="hub-badge b-ok">7</span></h2>
+<p class="hub-sub">리포트는 페이지로 열거나 HTML 파일로 다운로드할 수 있습니다. <b>요약판</b>은 validate 기준 미달로 룰북 PHASE 1부터 최종본 재작성 대상입니다.</p>
+<div class="hub-cards">
+<div class="tcard"><span class="tk">AMD</span><span class="co">Advanced Micro Devices</span><span class="st st-final">확정본 v6</span><p>매출/EPS/Q3 가이드는 모두 컨센서스를 상회했지만, 주가는 CapEx/FCF/HBM cost 부담을 더 크게 반영했다. AI/Data Center 수요 tone은 매우 강하고 Helios/MI450/MI500 가시성은 올라갔다.</p><span class="acts"><a class="go" href="reports/AMD_20260804.html">리포트 열기 →</a><a class="dl" href="reports/AMD_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">ANET</span><span class="co">Arista Networks</span><span class="st st-draft">요약판</span><p>첫 $3B+ revenue quarter, OPM 45%대의 매우 높은 quality beat. AI Ethernet/cloud titan demand가 핵심이며 매출 성장과 margin이 동시에 강하다.</p><span class="acts"><a class="go" href="reports/ANET_20260804.html">리포트 열기 →</a><a class="dl" href="reports/ANET_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">ALAB</span><span class="co">Astera Labs</span><span class="st st-draft">요약판</span><p>Revenue $392.4M, EPS $0.80로 큰 beat. Q3 guide $540~560M가 핵심 surprise. Scorpio X high-volume ramp와 PCIe 6.0 mix 확대가 이번 분기의 핵심.</p><span class="acts"><a class="go" href="reports/ALAB_20260804.html">리포트 열기 →</a><a class="dl" href="reports/ALAB_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">SPCX</span><span class="co">Space Exploration Technologies Corp.</span><span class="st st-draft">요약판</span><p>Revenue $7.8B로 consensus 대비 큰 beat로 정리. 다만 SPCX는 특수 ticker/source 구조라 일반 상장사 수준의 precision을 과장하면 안 된다.</p><span class="acts"><a class="go" href="reports/SPCX_20260804.html">리포트 열기 →</a><a class="dl" href="reports/SPCX_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">TSEM</span><span class="co">Tower Semiconductor</span><span class="st st-draft">요약판</span><p>Revenue $460.1M, OPM 19.6%, adjusted EPS $0.88로 record profitability. 컨센서스 대비 revenue는 slight beat, quality는 수익성 개선이 핵심.</p><span class="acts"><a class="go" href="reports/TSEM_20260804.html">리포트 열기 →</a><a class="dl" href="reports/TSEM_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">4062</span><span class="co">IBIDEN</span><span class="st st-draft">요약판</span><p>Net sales ¥123.219B, OP ¥26.880B로 강한 beat/성장. FY2026 guide 상향이 Q1 actual보다 더 중요한 이벤트.</p><span class="acts"><a class="go" href="reports/4062_20260804.html">리포트 열기 →</a><a class="dl" href="reports/4062_20260804.html" download>다운로드 ↓</a></span></div>
+<div class="tcard"><span class="tk">7011</span><span class="co">Mitsubishi Heavy Industries</span><span class="st st-draft">요약판</span><p>Revenue ¥1,194.2B, business profit ¥159.6B로 강한 성장. Order intake ¥2,022.4B +25.7% YoY가 가장 중요한 quality indicator.</p><span class="acts"><a class="go" href="reports/7011_20260804.html">리포트 열기 →</a><a class="dl" href="reports/7011_20260804.html" download>다운로드 ↓</a></span></div>
+</div>
+</section>
+
+<!-- SEC:UPCOMING -->
+<section class="hub-sec" id="upcoming">
+<h2>예정 Setup<span class="hub-badge b-up">4</span></h2>
+<p class="hub-sub">발표 전에는 컨센서스와 체크포인트만 유지합니다(플래시는 Telegram 텍스트로 별도 전송).</p>
+<div class="setup-grid">
+<div class="scard" id="up-LLY"><span class="tk">LLY</span><dl>
+<dt>KST 예상</dt><dd>2026-08-05 약 19:30~21:30 KST</dd>
+<dt>컨센서스 / 추가 필요</dt><dd>EPS $6.71 / Revenue·Mounjaro·Zepbound 컨센서스 추가 필요</dd>
+<dt>YoY/QoQ</dt><dd>미확보 — preview source 확보 시 업데이트</dd></dl></div>
+<div class="scard" id="up-SNDK"><span class="tk">SNDK</span><dl>
+<dt>KST 예상</dt><dd>2026-08-06 약 05:00~06:30 KST</dd>
+<dt>컨센서스 / 추가 필요</dt><dd>EPS $33.28 / NAND price·bit shipment setup 필요</dd>
+<dt>YoY/QoQ</dt><dd>미확보 — preview source 확보 시 업데이트</dd></dl></div>
+<div class="scard" id="up-WDC"><span class="tk">WDC</span><dl>
+<dt>KST 예상</dt><dd>2026-08-06 약 05:00~06:30 KST</dd>
+<dt>컨센서스 / 추가 필요</dt><dd>EPS $3.24 / HDD nearline·storage segment setup 필요</dd>
+<dt>YoY/QoQ</dt><dd>미확보 — preview source 확보 시 업데이트</dd></dl></div>
+<div class="scard" id="up-TTMI"><span class="tk">TTMI</span><dl>
+<dt>KST 예상</dt><dd>2026-08-06 약 05:00~06:30 KST</dd>
+<dt>컨센서스 / 추가 필요</dt><dd>EPS $0.84 / PCB·AI infra end-market setup 필요</dd>
+<dt>YoY/QoQ</dt><dd>미확보 — preview source 확보 시 업데이트</dd></dl></div>
+</div>
+</section>
+
+<!-- SEC:SURPRISE -->
+<section class="hub-sec sb" id="surprise">
+<h2>Surprise Board — 8/4 발표분</h2>
+<p class="hub-sub">각 리포트의 결론 요약을 표로 재배열한 것입니다. 세부 수치·판정 근거는 각 리포트 페이지의 컨센서스/Beat-Miss 섹션을 확인하세요.</p>
+<div class="scroll"><table>
+<tr><th>티커</th><th>핵심 수치</th><th>판정</th><th>핵심 코멘트</th></tr>
+<tr><td><a href="reports/AMD_20260804.html"><b>AMD</b></a></td><td class="v">Rev/EPS/Q3 guide 모두 상회</td><td><span class="judge j-mx">Beat + 주가 역반응</span></td><td>CapEx/FCF/HBM cost 부담을 주가가 더 크게 반영. AI 수요 tone 강함</td></tr>
+<tr><td><a href="reports/ANET_20260804.html"><b>ANET</b></a></td><td class="v">첫 $3B+ 분기 · OPM 45%대</td><td><span class="judge j-ok">Quality Beat</span></td><td>AI Ethernet / cloud titan demand, 성장·마진 동시 강세</td></tr>
+<tr><td><a href="reports/ALAB_20260804.html"><b>ALAB</b></a></td><td class="v">Rev $392.4M · EPS $0.80</td><td><span class="judge j-ok">Big Beat</span></td><td>Q3 guide $540~560M가 핵심 surprise, Scorpio X ramp</td></tr>
+<tr><td><a href="reports/SPCX_20260804.html"><b>SPCX</b></a></td><td class="v">Rev $7.8B</td><td><span class="judge j-mx">Beat (source 한계)</span></td><td>비상장 특수 구조 — 일반 상장사 수준 precision 과장 금지</td></tr>
+<tr><td><a href="reports/TSEM_20260804.html"><b>TSEM</b></a></td><td class="v">Rev $460.1M · OPM 19.6% · adj EPS $0.88</td><td><span class="judge j-ok">Slight Beat</span></td><td>Record profitability, 수익성 개선이 핵심 quality</td></tr>
+<tr><td><a href="reports/4062_20260804.html"><b>4062</b></a></td><td class="v">매출 ¥123.219B · OP ¥26.880B</td><td><span class="judge j-ok">강한 Beat</span></td><td>FY2026 가이드 상향이 Q1 actual보다 중요한 이벤트</td></tr>
+<tr><td><a href="reports/7011_20260804.html"><b>7011</b></a></td><td class="v">Rev ¥1,194.2B · 사업이익 ¥159.6B</td><td><span class="judge j-ok">강한 성장</span></td><td>수주 ¥2,022.4B +25.7% YoY가 최중요 quality indicator</td></tr>
+</table></div>
+</section>
+
+</div>
+<a href="#top" class="top">↑</a></body></html>
