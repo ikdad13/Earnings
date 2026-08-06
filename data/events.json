@@ -39,12 +39,12 @@
     },
     {
       "date": "2026-08-05",
-      "status": "next",
-      "label": "약 19:30–21:30 KST",
+      "status": "done",
+      "label": "발표 완료",
       "items": [
         {
           "ticker": "LLY",
-          "href": "#up-LLY"
+          "href": "reports/LLY_20260805.html"
         }
       ]
     },
