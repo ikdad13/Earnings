@@ -50,12 +50,12 @@
     },
     {
       "date": "2026-08-06",
-      "status": "next",
-      "label": "약 05:00–06:30 KST",
+      "status": "done",
+      "label": "발표 완료",
       "items": [
         {
           "ticker": "SNDK",
-          "href": "#up-SNDK"
+          "href": "reports/SNDK_20260806.html"
         },
         {
           "ticker": "WDC",

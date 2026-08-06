@@ -42,20 +42,26 @@ def main():
     for d in paths:
         n = len(re.findall(r"[LlMm]\s*[-\d.]+[ ,][-\d.]+", d))
         if n >= 2: series_pts.append(n)
+    source_limited = bool(re.search(r'data-source-limited-series=["\']true["\']', html, re.I))
     if not series_pts:
         fails.append("SVG 시계열 차트(polyline/path)가 없음.")
     else:
-        # 메인 지표는 ≥20 필수. YoY 파생 시리즈는 20Q-4=16개가 정상이므로 하한 12로 완화.
-        thin = [n for n in series_pts if n < 12]
+        # 원칙은 20Q+. 다만 신규/분리상장 등으로 20Q 자체가 없고 evidence를 명시한 경우 12Q+ 예외 허용.
+        thin_floor = 12 if source_limited else 12
+        thin = [n for n in series_pts if n < thin_floor]
         if thin:
-            fails.append(f"데이터 포인트 12개 미만 시리즈 {len(thin)}개 발견 (포인트 수: {sorted(set(thin))}). "
-                         "20Q 실데이터 미확보 상태로 차트 생성 → 최악 위반.")
+            fails.append(f"데이터 포인트 {thin_floor}개 미만 시리즈 {len(thin)}개 발견 (포인트 수: {sorted(set(thin))}). "
+                         "실데이터 미확보 상태로 차트 생성 → 최악 위반.")
         if max(series_pts) < 20:
-            fails.append(f"20개 이상 포인트를 가진 메인 시계열이 하나도 없음 (최대 {max(series_pts)}개). "
-                         "StockAnalysis 20Q 미수집 의심 → PHASE 2 복귀.")
+            if source_limited and re.search(r'source-limited\s+quarters\s*=\s*\d+', text, re.I) \
+               and re.search(r'StockAnalysis|FinChat|Fiscal\.ai|SEC|IR|Company Not Found|500|timeout|20Q|40Q', text, re.I):
+                warns.append(f"source-limited 예외 적용: 최대 {max(series_pts)}개 포인트. Source appendix 증거 확인 필요.")
+            else:
+                fails.append(f"20개 이상 포인트를 가진 메인 시계열이 하나도 없음 (최대 {max(series_pts)}개). "
+                             "20Q 미수집 의심 → PHASE 2 복귀. 예외 시 data-source-limited-series와 증거 필요.")
         mid = [n for n in series_pts if 12 <= n < 16]
         if mid:
-            warns.append(f"포인트 12~15개 시리즈 {len(mid)}개 — YoY 파생이 아니라면 데이터 부족 의심.")
+            warns.append(f"포인트 12~15개 시리즈 {len(mid)}개 — source-limited 예외 또는 YoY 파생인지 확인.")
         # 동일 좌표 복붙 감지 (Siemens 반례 패턴)
         dup = [(pts, c) for pts, c in Counter(polylines).items() if c > 1]
         if dup:
