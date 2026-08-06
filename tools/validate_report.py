@@ -46,8 +46,9 @@ def main():
     if not series_pts:
         fails.append("SVG 시계열 차트(polyline/path)가 없음.")
     else:
-        # 원칙은 20Q+. 다만 신규/분리상장 등으로 20Q 자체가 없고 evidence를 명시한 경우 12Q+ 예외 허용.
-        thin_floor = 12 if source_limited else 12
+        # 원칙은 20Q+. 다만 신규/분리상장/출시 초기 제품 등으로 20Q 자체가 없고 evidence를 명시한 경우 확보 가능한 actual 분기 수를 허용한다.
+        # 단 2점 직선/스파크라인을 차트로 위장하는 것은 금지하므로 source-limited도 최소 3포인트는 요구한다.
+        thin_floor = 3 if source_limited else 12
         thin = [n for n in series_pts if n < thin_floor]
         if thin:
             fails.append(f"데이터 포인트 {thin_floor}개 미만 시리즈 {len(thin)}개 발견 (포인트 수: {sorted(set(thin))}). "
